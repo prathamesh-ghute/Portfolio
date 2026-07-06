@@ -8,12 +8,20 @@ const HeroSection = () => {
         <img src="/profile.png" alt="Profile" className="profile-pic" />
         <h1>Hello, I'm <span className="name">Prathamesh Ghute</span></h1>
         <p className="tagline">
-          Aspiring Software Engineer | Java & React Developer | DBMS & OS Enthusiast
+          MERN Stack Developer | Final-Year IT Student
         </p>
         <p className="intro">
-          I'm currently pursuing my BE in IT at Zeal College, Pune. Passionate about full-stack development, scalable systems, and problem-solving. Currently learning DSA in Java.
+          I am a practical, product-focused MERN stack developer with a learnaholic mindset, dedicated to shipping end-to-end real-world applications. Rather than building generic tutorial projects, I focus on building India-focused, hyperlocal products. Currently expanding my horizons by mastering Spring, Spring Boot, and Data Structures & Algorithms in Java.
         </p>
-        <a href="#contact" className="cta-button">Let’s Connect</a>
+        <div className="hero-social-badges">
+          <span className="hero-badge">💻 30+ GitHub Repos</span>
+          <span className="hero-badge">🏆 LeetCode 50 Days Badge</span>
+          <span className="hero-badge">🤝 500+ LinkedIn Connections</span>
+        </div>
+        <div className="hero-actions">
+          <a href="#projects" className="cta-button">View My Work</a>
+          <a href="#contact" className="cta-button secondary">Let’s Connect</a>
+        </div>
       </div>
     </section>
   );

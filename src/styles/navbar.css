@@ -2,44 +2,123 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #1e293b;
+  background-color: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #38bdf8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #0ea5e9;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
 }
 
 .nav-links li a {
-  color: white;
+  color: #cbd5e1;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .nav-links li a:hover {
   color: #38bdf8;
 }
 
-/* Responsive menu (optional for later) */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #38bdf8, #0ea5e9);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #38bdf8;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
     flex-direction: column;
+    background-color: #1e293b;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+  }
+
+  .nav-links li a::after {
     display: none;
+  }
+
+  .logo {
+    font-size: 1.2rem;
   }
 }

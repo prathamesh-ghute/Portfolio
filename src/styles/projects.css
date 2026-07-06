@@ -2,29 +2,36 @@
   padding: 4rem 2rem;
   background-color: #0f172a;
   color: white;
-  text-align: center;
 }
 
 .projects-section h2 {
   font-size: 2.5rem;
   color: #38bdf8;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .projects-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .project-card {
   background-color: #1e293b;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
-  text-align: left;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid #38bdf8;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
 }
 
 .project-card h3 {
@@ -35,26 +42,83 @@
 
 .project-card .tech {
   color: #94a3b8;
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .project-card .desc {
   color: #cbd5e1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .github-btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   background-color: #38bdf8;
   color: #0f172a;
-  font-weight: bold;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #38bdf8;
 }
 
 .github-btn:hover {
-  background-color: #0ea5e9;
+  background-color: transparent;
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.live-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: #38bdf8;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #38bdf8;
+}
+
+.live-btn:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 2rem 1rem;
+  }
+
+  .projects-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
